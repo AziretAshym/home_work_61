@@ -3,4 +3,18 @@
   width: 300px;
   overflow: scroll;
   scrollbar-width: thin;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  padding: 12px;
+  border-radius: 13px;
+}
+
+.country {
+  display: inline;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
 }

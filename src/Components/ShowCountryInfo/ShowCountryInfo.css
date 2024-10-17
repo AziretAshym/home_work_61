@@ -1,0 +1,6 @@
+.rightSideContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  font-size: 20px;
+  justify-content: space-between;
+}
