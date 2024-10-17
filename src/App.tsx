@@ -1,5 +1,5 @@
-import './App.css'
-import CountryApp from './Containers/CountryApp/CountryApp.tsx';
+import "./App.css";
+import CountryApp from "./Containers/CountryApp/CountryApp.tsx";
 
 const App = () => (
   <>
@@ -7,4 +7,4 @@ const App = () => (
   </>
 );
 
-export default App
+export default App;

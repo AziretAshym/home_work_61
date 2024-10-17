@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import './CountryApp.css'
-import AllCountries from '../../Components/AllCountries/AllCountries.tsx';
-import axios from 'axios';
-import ShowCountryInfo from '../../Components/ShowCountryInfo/ShowCountryInfo.tsx';
-import { Country } from '../../types';
+import React, { useCallback, useEffect, useState } from "react";
+import "./CountryApp.css";
+import AllCountries from "../../Components/AllCountries/AllCountries.tsx";
+import axios from "axios";
+import ShowCountryInfo from "../../Components/ShowCountryInfo/ShowCountryInfo.tsx";
+import { Country } from "../../types";
 
 const CountryApp = () => {
   const [countries, setCountries] = useState([]);
@@ -11,34 +11,29 @@ const CountryApp = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const request = await axios.get('https://restcountries.com/v2/all');
+      const request = await axios.get("https://restcountries.com/v2/all");
       const response = request.data;
       setCountries(response);
     } catch (e) {
-      console.log('Error: ' + e);
+      console.log("Error: " + e);
     }
-  }, [])
-
-
+  }, []);
 
   useEffect(() => {
     void fetchData();
   }, [fetchData]);
 
-
-
   const countryClick = (country: Country) => {
     setSelectedCountry(country);
   };
 
-
   return (
-    <div className='container'>
+    <div className="container">
       <div className="leftSide">
-        <AllCountries countries={countries} countryClick={countryClick}/>
+        <AllCountries countries={countries} countryClick={countryClick} />
       </div>
       <div className="rightSide">
-        <ShowCountryInfo selectedCountry={selectedCountry}/>
+        <ShowCountryInfo selectedCountry={selectedCountry} />
       </div>
     </div>
   );

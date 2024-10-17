@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState, useCallback } from "react";
+import axios from "axios";
 
 interface BorderCountriesProps {
   borders: string[];
@@ -10,14 +10,14 @@ const BorderCountries: React.FC<BorderCountriesProps> = ({ borders }) => {
 
   const fetchBorderCountries = useCallback(async () => {
     try {
-      const borderPromises = borders.map(code =>
-        axios.get(`https://restcountries.com/v2/alpha/${code}?fields=name`)
+      const borderPromises = borders.map((code) =>
+        axios.get(`https://restcountries.com/v2/alpha/${code}?fields=name`),
       );
       const responses = await Promise.all(borderPromises);
-      const countryNames = responses.map(response => response.data.name);
+      const countryNames = responses.map((response) => response.data.name);
       setBorderCountries(countryNames);
     } catch (error) {
-      console.error('Error fetching border countries:', error);
+      console.error("Error fetching border countries:", error);
     }
   }, [borders]);
 
@@ -35,10 +35,9 @@ const BorderCountries: React.FC<BorderCountriesProps> = ({ borders }) => {
         <div>
           <h3>Bordering Countries:</h3>
           {borderCountries.map((borderCountry, index) => (
-            <p key={index} style={{margin: '0 0 10px 0'}}>
+            <p key={index} style={{ margin: "0 0 10px 0" }}>
               {borderCountry}
             </p>
-
           ))}
         </div>
       ) : (
