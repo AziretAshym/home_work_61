@@ -32,7 +32,7 @@ const BorderCountries: React.FC<BorderCountriesProps> = ({ borders }) => {
   return (
     <>
       {borderCountries.length > 0 ? (
-        <div>
+        <div style={{ fontSize: '20px' }}>
           <h3>Bordering Countries:</h3>
           {borderCountries.map((borderCountry, index) => (
             <p key={index} style={{ margin: "0 0 10px 0" }}>

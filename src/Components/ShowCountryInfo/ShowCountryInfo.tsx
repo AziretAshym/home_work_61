@@ -22,27 +22,29 @@ const ShowCountryInfo: React.FC<ShowCountryInfoProps> = ({
     <>
       {country ? (
         <div>
-          <div>
-            <h2>{country.name}</h2>
-            <p>
-              <strong>Capital:</strong> {country.capital}
-            </p>
-            <p>
-              <strong>Population:</strong> {country.population}
-            </p>
-            <p>
-              <strong>Region:</strong> {country.region}
-            </p>
-          </div>
-          <div>
-            <img
-              src={country.flag}
-              alt={`${country.name}`}
-              style={{ width: "300px" }}
-            />
+          <div className='rightSideContainer'>
+            <div>
+              <h2>{country.name}</h2>
+              <p>
+                <strong>Capital:</strong> {country.capital}
+              </p>
+              <p>
+                <strong>Population:</strong> {country.population}
+              </p>
+              <p>
+                <strong>Region:</strong> {country.region}
+              </p>
+            </div>
+            <div>
+              <img
+                src={country.flag}
+                alt={`${country.name}`}
+                style={{width: "300px"}}
+              />
+            </div>
           </div>
           {country.borders && country.borders.length > 0 ? (
-            <BorderingCountries borders={country.borders} />
+            <BorderingCountries borders={country.borders}/>
           ) : (
             <p>No bordering countries</p>
           )}
