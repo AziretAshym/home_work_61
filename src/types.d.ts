@@ -3,5 +3,7 @@ export interface Country {
   capital: string;
   population: number;
   flag: string;
-  region: string
+  region: string;
+  borders: string[];
+  alpha3Code: string;
 }

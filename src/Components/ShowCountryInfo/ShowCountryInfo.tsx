@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Country } from '../../types';
 import './ShowCountryInfo.css';
+import BorderingCountries from '../BorderingCountries/BorderingCountries.tsx';
 
 interface ShowCountryInfoProps {
   selectedCountry: Country | null;
@@ -18,7 +19,7 @@ const ShowCountryInfo: React.FC<ShowCountryInfoProps> = ({ selectedCountry }) =>
   return (
     <>
       {country ? (
-        <div className='rightSideContainer'>
+        <div>
           <div>
             <h2>{country.name}</h2>
             <p><strong>Capital:</strong> {country.capital}</p>
@@ -28,6 +29,11 @@ const ShowCountryInfo: React.FC<ShowCountryInfoProps> = ({ selectedCountry }) =>
           <div>
             <img src={country.flag} alt={`${country.name}`} style={{width: '300px'}}/>
           </div>
+          {country.borders && country.borders.length > 0 ? (
+            <BorderingCountries borders={country.borders} />
+          ) : (
+            <p>No bordering countries</p>
+          )}
         </div>
       ) : (
         <h2>Select a country</h2>
