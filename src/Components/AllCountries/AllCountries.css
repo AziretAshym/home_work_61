@@ -1,0 +1,6 @@
+.countriesList {
+  height: 600px;
+  width: 300px;
+  overflow: scroll;
+  scrollbar-width: thin;
+}

@@ -1,11 +1,10 @@
 import './App.css'
+import CountryApp from './Containers/CountryApp/CountryApp.tsx';
 
-function App() {
-
-  return (
-    <>
-    </>
-  )
-}
+const App = () => (
+  <>
+    <CountryApp />
+  </>
+);
 
 export default App
